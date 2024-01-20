@@ -1,0 +1,27 @@
+{
+  "name": "taro-assets-path-transform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "yu.pan",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/types": "^7.23.6",
+    "@supercharge/promise-pool": "^3.1.0",
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "@tarojs/taro": "^3.6.23",
+    "@tarojs/service": "^3.6.23",
+    "@types/babel__core": "^7.20.5",
+    "@types/md5": "^2.3.5",
+    "@types/node": "^20.11.5",
+    "postcss": "^8.4.33",
+    "typescript": "^5.3.3",
+    "webpack-chain": "^6.5.1"
+  }
+}
