@@ -1,19 +1,8 @@
 import type {NodePath, PluginItem, PluginPass} from '@babel/core'
 import type {ImportDeclaration, Statement} from "@babel/types";
 import template from '@babel/template'
-import path from "path";
-import fs from "fs";
 import {generateDefaultTransform} from "../utils";
 
-const getCacheData = (filePath: string): Record<string, string> => {
-    try {
-        fs.accessSync(filePath);
-        return JSON.parse(fs.readFileSync(filePath).toString());
-    } catch (error) {
-        return {}
-    }
-
-}
 
 export interface AssetsTransformOpt {
     transform?: (filePath: string) => string
