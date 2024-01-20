@@ -1,4 +1,4 @@
-# taro-assets-to-url
+# assets-path-transform
 适用 `taro` 的文件资源路径转换插件，可用于上传本地资源至云端。并替换代码中使用的本地路径为云端路径
 
 ## 配置
