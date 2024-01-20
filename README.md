@@ -10,7 +10,7 @@ module.exports = {
     // ...
     presets: [
         [
-            'taro-assets-path-transform',
+            'assets-path-transform',
             {
                 fileDir: 'assets',
                 upload: (filePath, fileKey) => {
@@ -24,7 +24,7 @@ module.exports = {
     mini: {
         // ...
         postcss: {
-            'taro-assets-path-transform/dist/plugins/postcss-plugin-assets-path-transform': {
+            'assets-path-transform/dist/plugins/postcss-plugin-assets-path-transform': {
                 enable: 'true',
                 config: {}
             }
@@ -40,7 +40,7 @@ module.exports = {
     mini: {
         // ...
         postcss: {
-            'taro-assets-path-transform/dist/postcss-plugin-assets-path-transform': {
+            'assets-path-transform/dist/postcss-plugin-assets-path-transform': {
                 enable: 'true',
                 config: {
                     transform:(filePath)=>{
