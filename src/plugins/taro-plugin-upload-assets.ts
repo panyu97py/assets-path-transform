@@ -3,7 +3,7 @@ import {PromisePool} from '@supercharge/promise-pool'
 import path from 'path';
 import fs from 'fs';
 import md5 from 'md5'
-import {cacheFileName} from "../utils";
+import {saveCacheData} from "../utils";
 
 /**
  * 递归查找文件
@@ -59,6 +59,6 @@ module.exports = (ctx: IPluginContext, pluginOpts: UploadAssetsPluginOpts) => {
             return {...result, [tempKey]: item.fileUrl}
         }, {})
 
-        fs.writeFileSync(path.join(__dirname, cacheFileName), JSON.stringify(fileUrlMap));
+        saveCacheData(fileUrlMap)
     })
 }

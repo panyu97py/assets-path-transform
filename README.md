@@ -24,7 +24,7 @@ module.exports = {
     mini: {
         // ...
         postcss: {
-            'taro-assets-path-transform/dist/postcss-plugin-assets-to-url': {
+            'taro-assets-path-transform/dist/plugins/postcss-plugin-assets-path-transform': {
                 enable: 'true',
                 config: {}
             }

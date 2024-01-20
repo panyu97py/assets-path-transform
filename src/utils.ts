@@ -1,16 +1,19 @@
 import fs from "fs";
 import path from "path";
 
-export const cacheFileName = 'fileUrlCache.json'
+const cacheFilePath = path.join(__dirname, 'cache.json')
 
-const getCacheData = (filePath: string): Record<string, string> => {
+const getCacheData = (): Record<string, string> => {
     try {
-        fs.accessSync(filePath);
-        return JSON.parse(fs.readFileSync(filePath).toString());
+        fs.accessSync(cacheFilePath);
+        return JSON.parse(fs.readFileSync(cacheFilePath).toString());
     } catch (error) {
         return {}
     }
+}
 
+export const saveCacheData = (cacheData: Record<string, string>) => {
+    fs.writeFileSync(cacheFilePath, JSON.stringify(cacheData));
 }
 
 const filePathFormat = (filePath: string) => filePath.replace(/^~/, '')
@@ -21,11 +24,13 @@ export const generateDefaultTransform = () => {
 
     return (filePath: string) => {
         if (!cacheData) {
-            cacheData = getCacheData(path.resolve(__dirname, cacheFileName))
+            cacheData = getCacheData()
         }
 
-        if (!cacheData[filePathFormat(filePath)]) return filePath
+        filePath = filePathFormat(filePath)
 
-        return cacheData[filePathFormat(filePath)]
+        if (!cacheData[filePath]) return
+
+        return cacheData[filePath]
     }
 }

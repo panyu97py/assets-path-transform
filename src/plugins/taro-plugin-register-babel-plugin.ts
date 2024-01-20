@@ -5,7 +5,7 @@ import path from 'path';
 module.exports = (ctx: IPluginContext,) => {
 
     ctx.modifyWebpackChain(({chain}) => {
-        const tempPath = path.resolve(__dirname, './babel-plugin-assets-to-url');
+        const tempPath = path.resolve(__dirname, './babel-plugin-assets-path-transform');
 
         chain.module
             .rule('script')
